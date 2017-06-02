@@ -213,7 +213,7 @@ void main(void) {
     if (err) blink_leds(2, 7);
     
     // UUID de la carac. privée, lisible et notification (0x12) et de deux octets (0x02)
-    err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,12,02", "AOK");
+    err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,12,05", "AOK");
     if (err) blink_leds(2, 8);
 
     // UUID de la carac. privée, lisible, éditable et notifiable (0x1A) et de trois octets (0x03)
@@ -250,28 +250,30 @@ void main(void) {
         if (err) blink_leds(1, 15);
     }
     */
-    int c = 0;
+    //int c = 0;
     while(true) {
         // advertisement interval=80ms period=2s
-        c++;
+        /*c++;
         if (c%5==0) {
             err = write_line("A,0050,07D0");
             if (err) blink_leds(2, 14);
         }
         if(c>100) {
             c=0;
-        }
+        }*/
         __delay_ms(1000);
         err = write_line("A,0050,07D0");
         if (err) blink_leds(2, 14);
         adcResult = ADC_GetConversion(0x4);
         char result[4];
         char command[64]="SUW,010203040506070809000A0B0C0D0E0F,";
-        // Met le niveau de la batterie à 50%
-        err = write_line("SUW,2A19,32");
-        if (err) blink_leds(2, 5);
-        sprintf(result, "%X", adcResult);
         err=write_line(strcat(command,result));
+        
+        // Met le niveau de la batterie à 50%
+        //err = write_line("SUW,2A19,32");
+        //if (err) blink_leds(2, 5);
+        sprintf(result, "%X", adcResult);
+        
     }
     
     // Arrête la connexion UART
