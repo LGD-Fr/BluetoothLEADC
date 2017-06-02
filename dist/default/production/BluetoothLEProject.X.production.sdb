@@ -9,7 +9,7 @@ channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"263 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\main.c
+"267 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\main.c
 [e E4389 . `uc
 channel_Temp 29
 channel_DAC 30
@@ -266,17 +266,17 @@ channel_FVR 31
 "175 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"265
+"269
 [v main@command command `[64]uc  1 a 64 0 ]
-"264
+"268
 [v main@result result `[4]uc  1 a 4 64 ]
 "184
 [v main@err err `i  1 a 2 70 ]
 "253
 [v main@c c `i  1 a 2 68 ]
-"264
+"268
 [v main@F4456 F4456 `[64]uc  1 s 64 F4456 ]
-"280
+"286
 } 0
 "167
 [v _write_and_wait write_and_wait `(i  1 e 2 0 ]

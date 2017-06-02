@@ -5702,7 +5702,7 @@ err = write_and_wait("PS,11223344556677889900AABBCCDDEEFF", "AOK");
 if (err) blink_leds(2, 7);
 
 
-err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,02,05", "AOK");
+err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,12,02", "AOK");
 if (err) blink_leds(2, 8);
 
 
@@ -5734,12 +5734,18 @@ if (c%5==0) {
 err = write_line("A,0050,07D0");
 if (err) blink_leds(2, 14);
 }
-
+if(c>100) {
+c=0;
+}
 _delay((unsigned long)((1000)*(8000000/4000.0)));
+err = write_line("A,0050,07D0");
+if (err) blink_leds(2, 14);
 adcResult = ADC_GetConversion(0x4);
 char result[4];
 char command[64]="SUW,010203040506070809000A0B0C0D0E0F,";
 
+err = write_line("SUW,2A19,32");
+if (err) blink_leds(2, 5);
 sprintf(result, "%X", adcResult);
 err=write_line(strcat(command,result));
 }

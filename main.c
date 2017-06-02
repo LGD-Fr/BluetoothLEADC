@@ -212,8 +212,8 @@ void main(void) {
     err = write_and_wait("PS,11223344556677889900AABBCCDDEEFF", "AOK");
     if (err) blink_leds(2, 7);
     
-    // UUID de la carac. privée, lisible (0x02) et de cinq octets (0x05)
-    err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,02,05", "AOK");
+    // UUID de la carac. privée, lisible et notification (0x12) et de deux octets (0x02)
+    err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,12,02", "AOK");
     if (err) blink_leds(2, 8);
 
     // UUID de la carac. privée, lisible, éditable et notifiable (0x1A) et de trois octets (0x03)
@@ -258,12 +258,18 @@ void main(void) {
             err = write_line("A,0050,07D0");
             if (err) blink_leds(2, 14);
         }
-        
+        if(c>100) {
+            c=0;
+        }
         __delay_ms(1000);
+        err = write_line("A,0050,07D0");
+        if (err) blink_leds(2, 14);
         adcResult = ADC_GetConversion(0x4);
         char result[4];
         char command[64]="SUW,010203040506070809000A0B0C0D0E0F,";
-        
+        // Met le niveau de la batterie à 50%
+        err = write_line("SUW,2A19,32");
+        if (err) blink_leds(2, 5);
         sprintf(result, "%X", adcResult);
         err=write_line(strcat(command,result));
     }
