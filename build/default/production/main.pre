@@ -5690,7 +5690,7 @@ err = write_and_wait("SR,00000000", "AOK");
 if (err) blink_leds(2, 1);
 
 
-err = write_and_wait("S-,PIC16-BLE2-001", "AOK");
+err = write_and_wait("S-,PIC16BLE", "AOK");
 if (err) blink_leds(2, 2);
 
 
@@ -5698,15 +5698,15 @@ err = write_and_wait("PZ", "AOK");
 if (err) blink_leds(2, 6);
 
 
-err = write_and_wait("PS,11223344556677889900AABBCCDDEEFF", "AOK");
+err = write_and_wait("PS,622DF40185ED4666A4FE9EFAA3AB47AA", "AOK");
 if (err) blink_leds(2, 7);
 
 
-err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,12,05", "AOK");
+err = write_and_wait("PC,7817A8EBF6CB4BE3814352086719754D,12,02", "AOK");
 if (err) blink_leds(2, 8);
 
 
-err = write_and_wait("PC,FF0203040506070809000A0B0C0D0E0F,1A,03", "AOK");
+err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,03", "AOK");
 if (err) blink_leds(2, 9);
 
 
@@ -5722,25 +5722,38 @@ err = write_and_wait("SUW,2A19,32", "AOK");
 if (err) blink_leds(2, 5);
 
 
-err = write_and_wait("SUW,010203040506070809000A0B0C0D0E0F,AABBCCDDEE", "AOK");
+err = write_and_wait("SUW,7817A8EBF6CB4BE3814352086719754D,AABBCCDDEE", "AOK");
 if (err) blink_leds(2, 10);
 
 # 253
 int c = 0;
 while(1) {
 
-# 264
-_delay((unsigned long)((1000)*(8000000/4000.0)));
+if (c%5==0) {
+
 err = write_line("A,0050,07D0");
 if (err) blink_leds(2, 14);
+}
+c++;
+if(c>100) {
+c=0;
+}
+
+_delay((unsigned long)((1000)*(8000000/4000.0)));
+
+
 adcResult = ADC_GetConversion(0x4);
 char result[4];
-char command[64]="SUW,010203040506070809000A0B0C0D0E0F,";
+char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
+err=write_line(strcat(command,result));
+
 
 
 
 sprintf(result, "%X", adcResult);
-err=write_line(strcat(command,result));
+
+
+
 }
 
 

@@ -9,12 +9,14 @@ channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"267 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\main.c
+"269 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\main.c
 [e E4389 . `uc
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "492 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
@@ -264,17 +266,17 @@ channel_FVR 31
 "175 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"269
+"271
 [v main@command command `[64]uc  1 a 64 0 ]
-"268
-[v main@result result `[4]uc  1 a 4 66 ]
+"270
+[v main@result result `[4]uc  1 a 4 64 ]
 "184
 [v main@err err `i  1 a 2 70 ]
 "253
-[v main@c c `i  1 a 2 64 ]
-"268
+[v main@c c `i  1 a 2 68 ]
+"270
 [v main@F4456 F4456 `[64]uc  1 s 64 F4456 ]
-"286
+"292
 } 0
 "167
 [v _write_and_wait write_and_wait `(i  1 e 2 0 ]
@@ -393,6 +395,17 @@ channel_FVR 31
 [v _set_low_leds set_low_leds `(i  1 e 2 0 ]
 {
 "38
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 8 ]
+[v ___awmod@counter counter `uc  1 a 1 7 ]
+"6
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+[v ___awmod@dividend dividend `i  1 p 2 4 ]
+"35
 } 0
 "68 C:\Users\Lucile\MPLABXProjects\BluetoothLEProject.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

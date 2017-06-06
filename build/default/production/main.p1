@@ -47,15 +47,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S30 . . . ]
 "358
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"267 main.c
+"269 main.c
 [c E4389 29 30 31 .. ]
 [n E4389 . channel_Temp channel_DAC channel_FVR  ]
 "286 mcc_generated_files/adc.h
 [v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E4389 ]
-"194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "34 C:\Program Files (x86)\Microchip\xc8\v1.41\include\string.h
 [v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -4666,7 +4666,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! != _err -> 0 `i 577  ]
 [e ( _blink_leds (2 , -> 2 `i -> 1 `i ]
 [e :U 577 ]
-[; ;main.c: 204: err = write_and_wait("S-,PIC16-BLE2-001", "AOK");
+[; ;main.c: 204: err = write_and_wait("S-,PIC16BLE", "AOK");
 "204
 [e = _err ( _write_and_wait (2 , -> :s 8C `*uc -> :s 9C `*uc ]
 [; ;main.c: 205: if (err) blink_leds(2, 2);
@@ -4682,7 +4682,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! != _err -> 0 `i 579  ]
 [e ( _blink_leds (2 , -> 2 `i -> 6 `i ]
 [e :U 579 ]
-[; ;main.c: 212: err = write_and_wait("PS,11223344556677889900AABBCCDDEEFF", "AOK");
+[; ;main.c: 212: err = write_and_wait("PS,622DF40185ED4666A4FE9EFAA3AB47AA", "AOK");
 "212
 [e = _err ( _write_and_wait (2 , -> :s 12C `*uc -> :s 13C `*uc ]
 [; ;main.c: 213: if (err) blink_leds(2, 7);
@@ -4690,7 +4690,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! != _err -> 0 `i 580  ]
 [e ( _blink_leds (2 , -> 2 `i -> 7 `i ]
 [e :U 580 ]
-[; ;main.c: 216: err = write_and_wait("PC,010203040506070809000A0B0C0D0E0F,12,05", "AOK");
+[; ;main.c: 216: err = write_and_wait("PC,7817A8EBF6CB4BE3814352086719754D,12,02", "AOK");
 "216
 [e = _err ( _write_and_wait (2 , -> :s 14C `*uc -> :s 15C `*uc ]
 [; ;main.c: 217: if (err) blink_leds(2, 8);
@@ -4698,7 +4698,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! != _err -> 0 `i 581  ]
 [e ( _blink_leds (2 , -> 2 `i -> 8 `i ]
 [e :U 581 ]
-[; ;main.c: 220: err = write_and_wait("PC,FF0203040506070809000A0B0C0D0E0F,1A,03", "AOK");
+[; ;main.c: 220: err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,03", "AOK");
 "220
 [e = _err ( _write_and_wait (2 , -> :s 16C `*uc -> :s 17C `*uc ]
 [; ;main.c: 221: if (err) blink_leds(2, 9);
@@ -4730,7 +4730,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ ! != _err -> 0 `i 585  ]
 [e ( _blink_leds (2 , -> 2 `i -> 5 `i ]
 [e :U 585 ]
-[; ;main.c: 236: err = write_and_wait("SUW,010203040506070809000A0B0C0D0E0F,AABBCCDDEE", "AOK");
+[; ;main.c: 236: err = write_and_wait("SUW,7817A8EBF6CB4BE3814352086719754D,AABBCCDDEE", "AOK");
 "236
 [e = _err ( _write_and_wait (2 , -> :s 23C `*uc -> :s 24C `*uc ]
 [; ;main.c: 237: if (err) blink_leds(2, 10);
@@ -4746,21 +4746,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 "254
 [e :U 588 ]
 {
-[; ;main.c: 264: _delay((unsigned long)((1000)*(8000000/4000.0)));
-"264
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 265: err = write_line("A,0050,07D0");
-"265
+[; ;main.c: 256: if (c%5==0) {
+"256
+[e $ ! == % _c -> 5 `i -> 0 `i 590  ]
+{
+[; ;main.c: 258: err = write_line("A,0050,07D0");
+"258
 [e = _err ( _write_line (1 -> :s 25C `*uc ]
-[; ;main.c: 266: if (err) blink_leds(2, 14);
-"266
-[e $ ! != _err -> 0 `i 590  ]
+[; ;main.c: 259: if (err) blink_leds(2, 14);
+"259
+[e $ ! != _err -> 0 `i 591  ]
 [e ( _blink_leds (2 , -> 2 `i -> 14 `i ]
+[e :U 591 ]
+"260
+}
 [e :U 590 ]
-[; ;main.c: 267: adcResult = ADC_GetConversion(0x4);
-"267
+[; ;main.c: 260: }
+[; ;main.c: 261: c++;
+"261
+[e ++ _c -> 1 `i ]
+[; ;main.c: 262: if(c>100) {
+"262
+[e $ ! > _c -> 100 `i 592  ]
+{
+[; ;main.c: 263: c=0;
+"263
+[e = _c -> 0 `i ]
+"264
+}
+[e :U 592 ]
+[; ;main.c: 264: }
+[; ;main.c: 266: _delay((unsigned long)((1000)*(8000000/4000.0)));
+"266
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 269: adcResult = ADC_GetConversion(0x4);
+"269
 [e = _adcResult ( _ADC_GetConversion (1 -> -> 4 `i `E4389 ]
-"268
+"270
 [v _result `uc ~T0 @X0 -> 4 `i a ]
 [v F4456 `uc ~T0 @X0 -> 64 `i s ]
 [i F4456
@@ -4769,83 +4791,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 85 `c
 -> 87 `c
 -> 44 `c
--> 48 `c
+-> 55 `c
+-> 56 `c
 -> 49 `c
--> 48 `c
+-> 55 `c
+-> 65 `c
+-> 56 `c
+-> 69 `c
+-> 66 `c
+-> 70 `c
+-> 54 `c
+-> 67 `c
+-> 66 `c
+-> 52 `c
+-> 66 `c
+-> 69 `c
+-> 51 `c
+-> 56 `c
+-> 49 `c
+-> 52 `c
+-> 51 `c
+-> 53 `c
 -> 50 `c
 -> 48 `c
--> 51 `c
--> 48 `c
--> 52 `c
--> 48 `c
--> 53 `c
--> 48 `c
--> 54 `c
--> 48 `c
--> 55 `c
--> 48 `c
 -> 56 `c
--> 48 `c
+-> 54 `c
+-> 55 `c
+-> 49 `c
 -> 57 `c
--> 48 `c
--> 48 `c
--> 48 `c
--> 65 `c
--> 48 `c
--> 66 `c
--> 48 `c
--> 67 `c
--> 48 `c
+-> 55 `c
+-> 53 `c
+-> 52 `c
 -> 68 `c
--> 48 `c
--> 69 `c
--> 48 `c
--> 70 `c
 -> 44 `c
 -> 0 `c
 ..
 ]
-"269
+"271
 [v _command `uc ~T0 @X0 -> 64 `i a ]
-[; ;main.c: 268: char result[4];
-[; ;main.c: 269: char command[64]="SUW,010203040506070809000A0B0C0D0E0F,";
+[; ;main.c: 270: char result[4];
+[; ;main.c: 271: char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
 [e = _command F4456 ]
-[; ;main.c: 273: sprintf(result, "%X", adcResult);
-"273
-[e ( _sprintf (1 , (. , &U _result :s 26C _adcResult ]
-[; ;main.c: 274: err=write_line(strcat(command,result));
-"274
+[; ;main.c: 272: err=write_line(strcat(command,result));
+"272
 [e = _err ( _write_line (1 ( _strcat (2 , &U _command -> &U _result `*Cuc ]
-"275
+[; ;main.c: 277: sprintf(result, "%X", adcResult);
+"277
+[e ( _sprintf (1 , (. , &U _result :s 26C _adcResult ]
+"281
 }
 [e :U 587 ]
 "254
 [e $U 588  ]
 [e :U 589 ]
-[; ;main.c: 275: }
-[; ;main.c: 278: do { LATAbits.LATA4 = 0; } while(0);
-"278
-[e :U 593 ]
+[; ;main.c: 281: }
+[; ;main.c: 284: do { LATAbits.LATA4 = 0; } while(0);
+"284
+[e :U 595 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 592 ]
-[; ;main.c: 281: err = strcmp(read_line(), "END");
-"281
-[e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 27C ]
-[; ;main.c: 282: if (err) blink_leds(3,9);
-"282
-[e $ ! != _err -> 0 `i 594  ]
-[e ( _blink_leds (2 , -> 3 `i -> 9 `i ]
 [e :U 594 ]
-[; ;main.c: 285: while(1);
-"285
+[; ;main.c: 287: err = strcmp(read_line(), "END");
+"287
+[e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 27C ]
+[; ;main.c: 288: if (err) blink_leds(3,9);
+"288
+[e $ ! != _err -> 0 `i 596  ]
+[e ( _blink_leds (2 , -> 3 `i -> 9 `i ]
 [e :U 596 ]
-[e :U 595 ]
-[e $U 596  ]
+[; ;main.c: 291: while(1);
+"291
+[e :U 598 ]
 [e :U 597 ]
-[; ;main.c: 286: }
-"286
+[e $U 598  ]
+[e :U 599 ]
+[; ;main.c: 292: }
+"292
 [e :UE 570 ]
 }
 [p f _sprintf 10485760 ]
@@ -4862,16 +4884,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 17C 65 79 75 0 ]
 [a 22C 65 79 75 0 ]
 [a 24C 65 79 75 0 ]
-[a 12C 80 83 44 49 49 50 50 51 51 52 52 53 53 54 54 55 55 56 56 57 57 48 48 65 65 66 66 67 67 68 68 69 69 70 70 0 ]
-[a 23C 83 85 87 44 48 49 48 50 48 51 48 52 48 53 48 54 48 55 48 56 48 57 48 48 48 65 48 66 48 67 48 68 48 69 48 70 44 65 65 66 66 67 67 68 68 69 69 0 ]
+[a 8C 83 45 44 80 73 67 49 54 66 76 69 0 ]
+[a 23C 83 85 87 44 55 56 49 55 65 56 69 66 70 54 67 66 52 66 69 51 56 49 52 51 53 50 48 56 54 55 49 57 55 53 52 68 44 65 65 66 66 67 67 68 68 69 69 0 ]
 [a 27C 69 78 68 0 ]
 [a 1C 67 77 68 0 ]
 [a 20C 67 77 68 0 ]
-[a 14C 80 67 44 48 49 48 50 48 51 48 52 48 53 48 54 48 55 48 56 48 57 48 48 48 65 48 66 48 67 48 68 48 69 48 70 44 49 50 44 48 53 0 ]
-[a 16C 80 67 44 70 70 48 50 48 51 48 52 48 53 48 54 48 55 48 56 48 57 48 48 48 65 48 66 48 67 48 68 48 69 48 70 44 49 65 44 48 51 0 ]
+[a 12C 80 83 44 54 50 50 68 70 52 48 49 56 53 69 68 52 54 54 54 65 52 70 69 57 69 70 65 65 51 65 66 52 55 65 65 0 ]
+[a 16C 80 67 44 67 48 57 51 54 56 53 68 48 48 53 70 52 68 51 67 56 50 52 48 54 68 51 48 50 48 65 50 67 54 48 56 44 49 65 44 48 51 0 ]
 [a 21C 83 85 87 44 50 65 49 57 44 51 50 0 ]
+[a 14C 80 67 44 55 56 49 55 65 56 69 66 70 54 67 66 52 66 69 51 56 49 52 51 53 50 48 56 54 55 49 57 55 53 52 68 44 49 50 44 48 50 0 ]
 [a 4C 83 83 44 67 48 48 48 48 48 48 49 0 ]
-[a 8C 83 45 44 80 73 67 49 54 45 66 76 69 50 45 48 48 49 0 ]
 [a 18C 82 44 49 0 ]
 [a 2C 83 70 44 49 0 ]
 [a 25C 65 44 48 48 53 48 44 48 55 68 48 0 ]
