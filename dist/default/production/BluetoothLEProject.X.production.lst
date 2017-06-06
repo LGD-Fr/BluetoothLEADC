@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.41 build -162212810 
-                                                                                               Tue Jun 06 17:13:51 2017
+                                                                                               Tue Jun 06 18:48:19 2017
 
 Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250102
      1                           	processor	16F1508
@@ -1412,8 +1412,8 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
   1398  0320  3431               	retlw	49	;'1'
   1399  0321  3441               	retlw	65	;'A'
   1400  0322  342C               	retlw	44	;','
-  1401  0323  3430               	retlw	48	;'0'
-  1402  0324  3433               	retlw	51	;'3'
+  1401  0323  3431               	retlw	49	;'1'
+  1402  0324  3434               	retlw	52	;'4'
   1403  0325  3400               	retlw	0
   1404  0326                     STR_12:	
   1405  0326  3450               	retlw	80	;'P'
@@ -1524,7 +1524,7 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
   1510  038A  3400               	retlw	0
   1511  038B                     STR_8:	
   1512  038B  3453               	retlw	83	;'S'
-  1513  038C  342D               	retlw	45	;'-'
+  1513  038C  344E               	retlw	78	;'N'
   1514  038D  342C               	retlw	44	;','
   1515  038E  3450               	retlw	80	;'P'
   1516  038F  3449               	retlw	73	;'I'
@@ -2222,7 +2222,7 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
   2208  00D3  3184  246C  3180   	fcall	_blink_leds
   2209  00D6                     l1869:	
   2210                           
-  2211                           ;main.c: 204: err = write_and_wait("S-,PIC16BLE", "AOK");
+  2211                           ;main.c: 204: err = write_and_wait("SN,PIC16BLE", "AOK");
   2212  00D6  308B               	movlw	low (STR_8| (0+32768))
   2213  00D7  0020               	movlb	0	; select bank0
   2214  00D8  00E2               	movwf	write_and_wait@cmd
@@ -2366,7 +2366,7 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
   2352  015F  3184  246C  3180   	fcall	_blink_leds
   2353  0162                     l1893:	
   2354                           
-  2355                           ;main.c: 220: err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,03", "AOK");
+  2355                           ;main.c: 220: err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,14", "AOK");
   2356  0162  30FC               	movlw	low (STR_16| (0+32768))
   2357  0163  0020               	movlb	0	; select bank0
   2358  0164  00E2               	movwf	write_and_wait@cmd
@@ -5267,7 +5267,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.41 build -162212810 
-Symbol Table                                                                                   Tue Jun 06 17:13:51 2017
+Symbol Table                                                                                   Tue Jun 06 18:48:19 2017
 
                         __CFG_CP$OFF 0000                          __CFG_LVP$ON 0000  
                                 l105 0648                                  l151 071D  

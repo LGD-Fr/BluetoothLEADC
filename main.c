@@ -201,7 +201,7 @@ void main(void) {
     if (err) blink_leds(2, 1);
     
     // Renommage du module
-    err = write_and_wait("S-,PIC16BLE", "AOK");
+    err = write_and_wait("SN,PIC16BLE", "AOK");
     if (err) blink_leds(2, 2);
     
     // Supprime l?ancien service privé
@@ -216,8 +216,8 @@ void main(void) {
     err = write_and_wait("PC,7817A8EBF6CB4BE3814352086719754D,12,02", "AOK");
     if (err) blink_leds(2, 8);
 
-    // UUID de la carac. privée, lisible, éditable et notifiable (0x1A) et de trois octets (0x03)
-    err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,03", "AOK");
+    // UUID de la carac. privée, lisible, éditable et notifiable (0x1A) et de 20 octets (0x14)
+    err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,14", "AOK");
     if (err) blink_leds(2, 9);
             
     // Redémarre le module

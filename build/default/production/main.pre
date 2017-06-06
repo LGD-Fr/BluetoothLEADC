@@ -5690,7 +5690,7 @@ err = write_and_wait("SR,00000000", "AOK");
 if (err) blink_leds(2, 1);
 
 
-err = write_and_wait("S-,PIC16BLE", "AOK");
+err = write_and_wait("SN,PIC16BLE", "AOK");
 if (err) blink_leds(2, 2);
 
 
@@ -5706,7 +5706,7 @@ err = write_and_wait("PC,7817A8EBF6CB4BE3814352086719754D,12,02", "AOK");
 if (err) blink_leds(2, 8);
 
 
-err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,03", "AOK");
+err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,14", "AOK");
 if (err) blink_leds(2, 9);
 
 
