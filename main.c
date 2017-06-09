@@ -13,6 +13,9 @@
 
 static uint16_t adcResult;
 
+/*
+ * Permet de faire clignoter les led
+ */
 int toggle_leds(void) {
     D4_Toggle();
     D5_Toggle();
@@ -21,6 +24,9 @@ int toggle_leds(void) {
     return (EXIT_SUCCESS);
 }
 
+/*
+ * Permet d'allumer les leds
+ */
 int set_high_leds(void) {
     D4_SetHigh();
     D5_SetHigh();
@@ -29,6 +35,9 @@ int set_high_leds(void) {
     return (EXIT_SUCCESS);
 }
 
+/*
+ * Permet d'éteindre les leds
+ */
 int set_low_leds(void) {
     D4_SetLow();
     D5_SetLow();
@@ -39,7 +48,7 @@ int set_low_leds(void) {
 
 /*
  * Fait clignoter `n` fois les quatres premiers bits
- * (de poids faible) de l?octet `c` sur les diodes.
+ * (de poids faible) de l'octet `c` sur les diodes.
  */
 int blink_leds(int n, int c) {
     __delay_ms(640);
@@ -58,7 +67,7 @@ int blink_leds(int n, int c) {
 }
 
 /*
- * Fonction de déboguage d?affichage d?un octet
+ * Fonction de déboguage d?affichage d'un octet
  * sur les quatres diodes, en deux fois.
  * 
  * Appuyer sur le bouton "S1" après la vision
@@ -83,7 +92,7 @@ int show_char_leds(char c) {
     if (c & 0b00000100) D6_SetHigh();
     if (c & 0b00001000) D7_SetHigh();
     
-    // attente de l?appui sur le bouton
+    // attente de l'appui sur le bouton
     while (S1_GetValue());
     
     // clignotement intermédiaire, simple
@@ -100,7 +109,7 @@ int show_char_leds(char c) {
     if (c & 0b01000000) D6_SetHigh();
     if (c & 0b10000000) D7_SetHigh();
     
-    // attente de l?appui sur le bouton
+    // attente de l'appui sur le bouton
     while(S1_GetValue());
     __delay_ms(640);
     // remise à zéro
@@ -111,7 +120,7 @@ int show_char_leds(char c) {
 
 /*
  * Affiche pendant tout le reste du programme
- * les octets reçus par l?UART sur les diodes.
+ * les octets reçus par l'UART sur les diodes.
  */
 int show_input_leds(void) {
     while(true) {
@@ -125,7 +134,7 @@ int show_input_leds(void) {
 }
 
 /*
- * Lecture d?un ligne (maximum 62 caractères) reçue sur l?UART.
+ * Lecture d'une ligne (maximum 62 caractères) reçue sur l?UART.
  * La fonction attend et lit "\r\n" à la fin de la ligne
  * et remplace cet "\r\n" par "\0" (fin de chaîne.)
  */
@@ -135,7 +144,7 @@ char * read_line(void) {
     do {
         c[0] = EUSART_Read();
     } while (c[0] == '\0');
-    // Lecture d?une ligne complète (terminée par "\r\n")
+    // Lecture d'une ligne complète (terminée par "\r\n")
     int i = 0;
     do {
         c[++i] = EUSART_Read();
@@ -147,7 +156,7 @@ char * read_line(void) {
 }
 
 /*
- * Envoie d?une ligne sur l?interface UART.
+ * Envoie d'une ligne sur l'interface UART.
  * La fonction rajoute "\r\n" à la fin.
  */
 int write_line(char * line) {
@@ -187,7 +196,7 @@ void main(void) {
     err = strcmp(read_line(), "CMD");
     if (err) blink_leds(1, 1);
     
-    // Remise aux valeurs d?usine
+    // Remise aux valeurs d'usine
     err = write_and_wait("SF,1", "AOK");
     if (err) blink_leds(1, 2);
     
@@ -236,20 +245,7 @@ void main(void) {
     err = write_and_wait("SUW,7817A8EBF6CB4BE3814352086719754D,AABBCCDDEE", "AOK");
     if (err) blink_leds(2, 10);
 
-    // Publie les services BLE
-    //err = write_and_wait("A", "AOK");
-    //if (err) blink_leds(2, 14);
-    
-    /*
-    // envoi périodique d?un niveau de batterie
-    char * cmd = "SUW,2A19,30";
-    // boucle infinie
-    while(true) {
-        __delay_ms(1000);
-        err = write_line(cmd);
-        if (err) blink_leds(1, 15);
-    }
-    */
+   
     int c = 0;// compteur
     while(true) {
        
@@ -264,20 +260,14 @@ void main(void) {
         }
         
         __delay_ms(1000);
-        //err = write_line("A,0050,07D0");
-        //if (err) blink_leds(2, 14);
+        
         adcResult = ADC_GetConversion(0x4);
         char result[4];
         char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
         err=write_line(strcat(command,result));
         
-        // Met le niveau de la batterie à 50%
-        //err = write_line("SUW,2A19,32");
-        //if (err) blink_leds(2, 5);
         sprintf(result, "%X", adcResult);
-        
-        
-
+    
     }
     
     // Arrête la connexion UART

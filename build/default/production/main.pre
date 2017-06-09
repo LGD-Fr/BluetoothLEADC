@@ -5525,6 +5525,7 @@ void WDT_Initialize(void);
 # 14 "main.c"
 static uint16_t adcResult;
 
+# 19
 int toggle_leds(void) {
 do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
 do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
@@ -5533,6 +5534,7 @@ do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0);
 return (0);
 }
 
+# 30
 int set_high_leds(void) {
 do { LATAbits.LATA5 = 1; } while(0);
 do { LATAbits.LATA1 = 1; } while(0);
@@ -5541,6 +5543,7 @@ do { LATCbits.LATC5 = 1; } while(0);
 return (0);
 }
 
+# 41
 int set_low_leds(void) {
 do { LATAbits.LATA5 = 0; } while(0);
 do { LATAbits.LATA1 = 0; } while(0);
@@ -5549,7 +5552,7 @@ do { LATCbits.LATC5 = 0; } while(0);
 return (0);
 }
 
-# 44
+# 53
 int blink_leds(int n, int c) {
 _delay((unsigned long)((640)*(8000000/4000.0)));
 for (int i = 0; i < n; ++i) {
@@ -5566,7 +5569,7 @@ _delay((unsigned long)((640)*(8000000/4000.0)));
 return (0);
 }
 
-# 68
+# 77
 int show_char_leds(char c) {
 
 set_low_leds();
@@ -5611,7 +5614,7 @@ set_low_leds();
 return (0);
 }
 
-# 116
+# 125
 int show_input_leds(void) {
 while(1) {
 char c = 0;
@@ -5623,7 +5626,7 @@ show_char_leds(c);
 return (0);
 }
 
-# 132
+# 141
 char * read_line(void) {
 char c[64];
 
@@ -5641,7 +5644,7 @@ if (c[i-1] == '\r') c[i-1] = '\0';
 return c;
 }
 
-# 153
+# 162
 int write_line(char * line) {
 int i = 0;
 while(line[i] != '\0') {
@@ -5652,7 +5655,7 @@ EUSART_Write('\n');
 return (0);
 }
 
-# 167
+# 176
 int write_and_wait(char * cmd, char * res) {
 write_line(cmd);
 char * line = read_line();
@@ -5725,7 +5728,7 @@ if (err) blink_leds(2, 5);
 err = write_and_wait("SUW,7817A8EBF6CB4BE3814352086719754D,AABBCCDDEE", "AOK");
 if (err) blink_leds(2, 10);
 
-# 253
+
 int c = 0;
 while(1) {
 
@@ -5741,18 +5744,12 @@ c=0;
 
 _delay((unsigned long)((1000)*(8000000/4000.0)));
 
-
 adcResult = ADC_GetConversion(0x4);
 char result[4];
 char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
 err=write_line(strcat(command,result));
 
-
-
-
 sprintf(result, "%X", adcResult);
-
-
 
 }
 

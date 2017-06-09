@@ -47,7 +47,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S30 . . . ]
 "358
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"269 main.c
+"264 main.c
 [c E4389 29 30 31 .. ]
 [n E4389 . channel_Temp channel_DAC channel_FVR  ]
 "286 mcc_generated_files/adc.h
@@ -4077,159 +4077,159 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14 main.c
 [v _adcResult `ui ~T0 @X0 1 s ]
 [; ;main.c: 14: static uint16_t adcResult;
-"16
+"19
 [v _toggle_leds `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 16: int toggle_leds(void) {
+[; ;main.c: 19: int toggle_leds(void) {
 [e :U _toggle_leds ]
 [f ]
-[; ;main.c: 17: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
-"17
+[; ;main.c: 20: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+"20
 [e :U 453 ]
 {
 [e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
 }
 [e :U 452 ]
-[; ;main.c: 18: do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
-"18
+[; ;main.c: 21: do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+"21
 [e :U 456 ]
 {
 [e = . . _LATAbits 0 1 -> ~ -> . . _LATAbits 0 1 `i `uc ]
 }
 [e :U 455 ]
-[; ;main.c: 19: do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0);
-"19
+[; ;main.c: 22: do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0);
+"22
 [e :U 459 ]
 {
 [e = . . _LATAbits 0 2 -> ~ -> . . _LATAbits 0 2 `i `uc ]
 }
 [e :U 458 ]
-[; ;main.c: 20: do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0);
-"20
+[; ;main.c: 23: do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0);
+"23
 [e :U 462 ]
 {
 [e = . . _LATCbits 0 5 -> ~ -> . . _LATCbits 0 5 `i `uc ]
 }
 [e :U 461 ]
-[; ;main.c: 21: return (0);
-"21
+[; ;main.c: 24: return (0);
+"24
 [e ) -> 0 `i ]
 [e $UE 450  ]
-[; ;main.c: 22: }
-"22
+[; ;main.c: 25: }
+"25
 [e :UE 450 ]
 }
-"24
+"30
 [v _set_high_leds `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 24: int set_high_leds(void) {
+[; ;main.c: 30: int set_high_leds(void) {
 [e :U _set_high_leds ]
 [f ]
-[; ;main.c: 25: do { LATAbits.LATA5 = 1; } while(0);
-"25
+[; ;main.c: 31: do { LATAbits.LATA5 = 1; } while(0);
+"31
 [e :U 466 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 465 ]
-[; ;main.c: 26: do { LATAbits.LATA1 = 1; } while(0);
-"26
+[; ;main.c: 32: do { LATAbits.LATA1 = 1; } while(0);
+"32
 [e :U 469 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 468 ]
-[; ;main.c: 27: do { LATAbits.LATA2 = 1; } while(0);
-"27
+[; ;main.c: 33: do { LATAbits.LATA2 = 1; } while(0);
+"33
 [e :U 472 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 471 ]
-[; ;main.c: 28: do { LATCbits.LATC5 = 1; } while(0);
-"28
+[; ;main.c: 34: do { LATCbits.LATC5 = 1; } while(0);
+"34
 [e :U 475 ]
 {
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 474 ]
-[; ;main.c: 29: return (0);
-"29
+[; ;main.c: 35: return (0);
+"35
 [e ) -> 0 `i ]
 [e $UE 463  ]
-[; ;main.c: 30: }
-"30
+[; ;main.c: 36: }
+"36
 [e :UE 463 ]
 }
-"32
+"41
 [v _set_low_leds `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 32: int set_low_leds(void) {
+[; ;main.c: 41: int set_low_leds(void) {
 [e :U _set_low_leds ]
 [f ]
-[; ;main.c: 33: do { LATAbits.LATA5 = 0; } while(0);
-"33
+[; ;main.c: 42: do { LATAbits.LATA5 = 0; } while(0);
+"42
 [e :U 479 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 478 ]
-[; ;main.c: 34: do { LATAbits.LATA1 = 0; } while(0);
-"34
+[; ;main.c: 43: do { LATAbits.LATA1 = 0; } while(0);
+"43
 [e :U 482 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 481 ]
-[; ;main.c: 35: do { LATAbits.LATA2 = 0; } while(0);
-"35
+[; ;main.c: 44: do { LATAbits.LATA2 = 0; } while(0);
+"44
 [e :U 485 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 484 ]
-[; ;main.c: 36: do { LATCbits.LATC5 = 0; } while(0);
-"36
+[; ;main.c: 45: do { LATCbits.LATC5 = 0; } while(0);
+"45
 [e :U 488 ]
 {
 [e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 487 ]
-[; ;main.c: 37: return (0);
-"37
+[; ;main.c: 46: return (0);
+"46
 [e ) -> 0 `i ]
 [e $UE 476  ]
-[; ;main.c: 38: }
-"38
+[; ;main.c: 47: }
+"47
 [e :UE 476 ]
 }
-"44
+"53
 [v _blink_leds `(i ~T0 @X0 1 ef2`i`i ]
 {
-[; ;main.c: 44: int blink_leds(int n, int c) {
+[; ;main.c: 53: int blink_leds(int n, int c) {
 [e :U _blink_leds ]
 [v _n `i ~T0 @X0 1 r1 ]
 [v _c `i ~T0 @X0 1 r2 ]
 [f ]
-[; ;main.c: 45: _delay((unsigned long)((640)*(8000000/4000.0)));
-"45
+[; ;main.c: 54: _delay((unsigned long)((640)*(8000000/4000.0)));
+"54
 [e ( __delay (1 -> * -> -> 640 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 46: for (int i = 0; i < n; ++i) {
-"46
+[; ;main.c: 55: for (int i = 0; i < n; ++i) {
+"55
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 493  ]
 [e :U 490 ]
 {
-[; ;main.c: 47: set_low_leds();
-"47
+[; ;main.c: 56: set_low_leds();
+"56
 [e ( _set_low_leds ..  ]
-[; ;main.c: 48: _delay((unsigned long)((128)*(8000000/4000.0)));
-"48
+[; ;main.c: 57: _delay((unsigned long)((128)*(8000000/4000.0)));
+"57
 [e ( __delay (1 -> * -> -> 128 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 49: if (c & 0b00000001) do { LATAbits.LATA5 = 1; } while(0);
-"49
+[; ;main.c: 58: if (c & 0b00000001) do { LATAbits.LATA5 = 1; } while(0);
+"58
 [e $ ! != & _c -> 1 `i -> 0 `i 494  ]
 [e :U 497 ]
 {
@@ -4237,8 +4237,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 496 ]
 [e :U 494 ]
-[; ;main.c: 50: if (c & 0b00000010) do { LATAbits.LATA1 = 1; } while(0);
-"50
+[; ;main.c: 59: if (c & 0b00000010) do { LATAbits.LATA1 = 1; } while(0);
+"59
 [e $ ! != & _c -> 2 `i -> 0 `i 498  ]
 [e :U 501 ]
 {
@@ -4246,8 +4246,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 500 ]
 [e :U 498 ]
-[; ;main.c: 51: if (c & 0b00000100) do { LATAbits.LATA2 = 1; } while(0);
-"51
+[; ;main.c: 60: if (c & 0b00000100) do { LATAbits.LATA2 = 1; } while(0);
+"60
 [e $ ! != & _c -> 4 `i -> 0 `i 502  ]
 [e :U 505 ]
 {
@@ -4255,8 +4255,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 504 ]
 [e :U 502 ]
-[; ;main.c: 52: if (c & 0b00001000) do { LATCbits.LATC5 = 1; } while(0);
-"52
+[; ;main.c: 61: if (c & 0b00001000) do { LATCbits.LATC5 = 1; } while(0);
+"61
 [e $ ! != & _c -> 8 `i -> 0 `i 506  ]
 [e :U 509 ]
 {
@@ -4264,69 +4264,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 508 ]
 [e :U 506 ]
-[; ;main.c: 53: _delay((unsigned long)((128)*(8000000/4000.0)));
-"53
+[; ;main.c: 62: _delay((unsigned long)((128)*(8000000/4000.0)));
+"62
 [e ( __delay (1 -> * -> -> 128 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"54
+"63
 }
-"46
+"55
 [e =+ _i -> 1 `i ]
 [e :U 493 ]
 [e $ < _i _n 490  ]
 [e :U 491 ]
-"54
+"63
 }
-[; ;main.c: 54: }
-[; ;main.c: 55: set_low_leds();
-"55
+[; ;main.c: 63: }
+[; ;main.c: 64: set_low_leds();
+"64
 [e ( _set_low_leds ..  ]
-[; ;main.c: 56: _delay((unsigned long)((640)*(8000000/4000.0)));
-"56
+[; ;main.c: 65: _delay((unsigned long)((640)*(8000000/4000.0)));
+"65
 [e ( __delay (1 -> * -> -> 640 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 57: return (0);
-"57
+[; ;main.c: 66: return (0);
+"66
 [e ) -> 0 `i ]
 [e $UE 489  ]
-[; ;main.c: 58: }
-"58
+[; ;main.c: 67: }
+"67
 [e :UE 489 ]
 }
-"68
+"77
 [v _show_char_leds `(i ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 68: int show_char_leds(char c) {
+[; ;main.c: 77: int show_char_leds(char c) {
 [e :U _show_char_leds ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 70: set_low_leds();
-"70
+[; ;main.c: 79: set_low_leds();
+"79
 [e ( _set_low_leds ..  ]
-[; ;main.c: 71: _delay((unsigned long)((64)*(8000000/4000.0)));
-"71
+[; ;main.c: 80: _delay((unsigned long)((64)*(8000000/4000.0)));
+"80
 [e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 72: set_high_leds();
-"72
-[e ( _set_high_leds ..  ]
-[; ;main.c: 73: _delay((unsigned long)((64)*(8000000/4000.0)));
-"73
-[e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 74: set_low_leds();
-"74
-[e ( _set_low_leds ..  ]
-[; ;main.c: 75: _delay((unsigned long)((64)*(8000000/4000.0)));
-"75
-[e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 76: set_high_leds();
-"76
-[e ( _set_high_leds ..  ]
-[; ;main.c: 77: _delay((unsigned long)((64)*(8000000/4000.0)));
-"77
-[e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 78: set_low_leds();
-"78
-[e ( _set_low_leds ..  ]
-[; ;main.c: 81: if (c & 0b00000001) do { LATAbits.LATA5 = 1; } while(0);
+[; ;main.c: 81: set_high_leds();
 "81
+[e ( _set_high_leds ..  ]
+[; ;main.c: 82: _delay((unsigned long)((64)*(8000000/4000.0)));
+"82
+[e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 83: set_low_leds();
+"83
+[e ( _set_low_leds ..  ]
+[; ;main.c: 84: _delay((unsigned long)((64)*(8000000/4000.0)));
+"84
+[e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 85: set_high_leds();
+"85
+[e ( _set_high_leds ..  ]
+[; ;main.c: 86: _delay((unsigned long)((64)*(8000000/4000.0)));
+"86
+[e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 87: set_low_leds();
+"87
+[e ( _set_low_leds ..  ]
+[; ;main.c: 90: if (c & 0b00000001) do { LATAbits.LATA5 = 1; } while(0);
+"90
 [e $ ! != & -> _c `i -> 1 `i -> 0 `i 511  ]
 [e :U 514 ]
 {
@@ -4334,8 +4334,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 513 ]
 [e :U 511 ]
-[; ;main.c: 82: if (c & 0b00000010) do { LATAbits.LATA1 = 1; } while(0);
-"82
+[; ;main.c: 91: if (c & 0b00000010) do { LATAbits.LATA1 = 1; } while(0);
+"91
 [e $ ! != & -> _c `i -> 2 `i -> 0 `i 515  ]
 [e :U 518 ]
 {
@@ -4343,8 +4343,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 517 ]
 [e :U 515 ]
-[; ;main.c: 83: if (c & 0b00000100) do { LATAbits.LATA2 = 1; } while(0);
-"83
+[; ;main.c: 92: if (c & 0b00000100) do { LATAbits.LATA2 = 1; } while(0);
+"92
 [e $ ! != & -> _c `i -> 4 `i -> 0 `i 519  ]
 [e :U 522 ]
 {
@@ -4352,8 +4352,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 521 ]
 [e :U 519 ]
-[; ;main.c: 84: if (c & 0b00001000) do { LATCbits.LATC5 = 1; } while(0);
-"84
+[; ;main.c: 93: if (c & 0b00001000) do { LATCbits.LATC5 = 1; } while(0);
+"93
 [e $ ! != & -> _c `i -> 8 `i -> 0 `i 523  ]
 [e :U 526 ]
 {
@@ -4361,33 +4361,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 525 ]
 [e :U 523 ]
-[; ;main.c: 87: while (PORTCbits.RC4);
-"87
+[; ;main.c: 96: while (PORTCbits.RC4);
+"96
 [e $U 527  ]
 [e :U 528 ]
 [e :U 527 ]
 [e $ != -> . . _PORTCbits 0 4 `i -> -> -> 0 `i `Vuc `i 528  ]
 [e :U 529 ]
-[; ;main.c: 90: _delay((unsigned long)((640)*(8000000/4000.0)));
-"90
+[; ;main.c: 99: _delay((unsigned long)((640)*(8000000/4000.0)));
+"99
 [e ( __delay (1 -> * -> -> 640 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 91: set_low_leds();
-"91
+[; ;main.c: 100: set_low_leds();
+"100
 [e ( _set_low_leds ..  ]
-[; ;main.c: 92: _delay((unsigned long)((64)*(8000000/4000.0)));
-"92
+[; ;main.c: 101: _delay((unsigned long)((64)*(8000000/4000.0)));
+"101
 [e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 93: set_high_leds();
-"93
+[; ;main.c: 102: set_high_leds();
+"102
 [e ( _set_high_leds ..  ]
-[; ;main.c: 94: _delay((unsigned long)((64)*(8000000/4000.0)));
-"94
+[; ;main.c: 103: _delay((unsigned long)((64)*(8000000/4000.0)));
+"103
 [e ( __delay (1 -> * -> -> 64 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 95: set_low_leds();
-"95
+[; ;main.c: 104: set_low_leds();
+"104
 [e ( _set_low_leds ..  ]
-[; ;main.c: 98: if (c & 0b00010000) do { LATAbits.LATA5 = 1; } while(0);
-"98
+[; ;main.c: 107: if (c & 0b00010000) do { LATAbits.LATA5 = 1; } while(0);
+"107
 [e $ ! != & -> _c `i -> 16 `i -> 0 `i 530  ]
 [e :U 533 ]
 {
@@ -4395,8 +4395,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 532 ]
 [e :U 530 ]
-[; ;main.c: 99: if (c & 0b00100000) do { LATAbits.LATA1 = 1; } while(0);
-"99
+[; ;main.c: 108: if (c & 0b00100000) do { LATAbits.LATA1 = 1; } while(0);
+"108
 [e $ ! != & -> _c `i -> 32 `i -> 0 `i 534  ]
 [e :U 537 ]
 {
@@ -4404,8 +4404,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 536 ]
 [e :U 534 ]
-[; ;main.c: 100: if (c & 0b01000000) do { LATAbits.LATA2 = 1; } while(0);
-"100
+[; ;main.c: 109: if (c & 0b01000000) do { LATAbits.LATA2 = 1; } while(0);
+"109
 [e $ ! != & -> _c `i -> 64 `i -> 0 `i 538  ]
 [e :U 541 ]
 {
@@ -4413,8 +4413,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 540 ]
 [e :U 538 ]
-[; ;main.c: 101: if (c & 0b10000000) do { LATCbits.LATC5 = 1; } while(0);
-"101
+[; ;main.c: 110: if (c & 0b10000000) do { LATCbits.LATC5 = 1; } while(0);
+"110
 [e $ ! != & -> _c `i -> 128 `i -> 0 `i 542  ]
 [e :U 545 ]
 {
@@ -4422,367 +4422,367 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 544 ]
 [e :U 542 ]
-[; ;main.c: 104: while(PORTCbits.RC4);
-"104
+[; ;main.c: 113: while(PORTCbits.RC4);
+"113
 [e $U 546  ]
 [e :U 547 ]
 [e :U 546 ]
 [e $ != -> . . _PORTCbits 0 4 `i -> -> -> 0 `i `Vuc `i 547  ]
 [e :U 548 ]
-[; ;main.c: 105: _delay((unsigned long)((640)*(8000000/4000.0)));
-"105
+[; ;main.c: 114: _delay((unsigned long)((640)*(8000000/4000.0)));
+"114
 [e ( __delay (1 -> * -> -> 640 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 107: set_low_leds();
-"107
+[; ;main.c: 116: set_low_leds();
+"116
 [e ( _set_low_leds ..  ]
-[; ;main.c: 109: return (0);
-"109
+[; ;main.c: 118: return (0);
+"118
 [e ) -> 0 `i ]
 [e $UE 510  ]
-[; ;main.c: 110: }
-"110
+[; ;main.c: 119: }
+"119
 [e :UE 510 ]
 }
-"116
+"125
 [v _show_input_leds `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 116: int show_input_leds(void) {
+[; ;main.c: 125: int show_input_leds(void) {
 [e :U _show_input_leds ]
 [f ]
-[; ;main.c: 117: while(1) {
-"117
+[; ;main.c: 126: while(1) {
+"126
 [e :U 551 ]
 {
-"118
+"127
 [v _c `uc ~T0 @X0 1 a ]
-[; ;main.c: 118: char c = 0;
+[; ;main.c: 127: char c = 0;
 [e = _c -> -> 0 `i `uc ]
-[; ;main.c: 119: while (c == 0) {
-"119
+[; ;main.c: 128: while (c == 0) {
+"128
 [e $U 553  ]
 [e :U 554 ]
 {
-[; ;main.c: 120: c = EUSART_Read();
-"120
+[; ;main.c: 129: c = EUSART_Read();
+"129
 [e = _c ( _EUSART_Read ..  ]
-"121
+"130
 }
 [e :U 553 ]
-"119
+"128
 [e $ == -> _c `i -> 0 `i 554  ]
 [e :U 555 ]
-[; ;main.c: 121: }
-[; ;main.c: 122: show_char_leds(c);
-"122
+[; ;main.c: 130: }
+[; ;main.c: 131: show_char_leds(c);
+"131
 [e ( _show_char_leds (1 _c ]
-"123
+"132
 }
 [e :U 550 ]
-"117
+"126
 [e $U 551  ]
 [e :U 552 ]
-[; ;main.c: 123: }
-[; ;main.c: 124: return (0);
-"124
+[; ;main.c: 132: }
+[; ;main.c: 133: return (0);
+"133
 [e ) -> 0 `i ]
 [e $UE 549  ]
-[; ;main.c: 125: }
-"125
+[; ;main.c: 134: }
+"134
 [e :UE 549 ]
 }
-"132
+"141
 [v _read_line `(*uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 132: char * read_line(void) {
+[; ;main.c: 141: char * read_line(void) {
 [e :U _read_line ]
 [f ]
-"133
+"142
 [v _c `uc ~T0 @X0 -> 64 `i a ]
-[; ;main.c: 133: char c[64];
-[; ;main.c: 135: do {
-"135
+[; ;main.c: 142: char c[64];
+[; ;main.c: 144: do {
+"144
 [e :U 559 ]
 {
-[; ;main.c: 136: c[0] = EUSART_Read();
-"136
+[; ;main.c: 145: c[0] = EUSART_Read();
+"145
 [e = *U + &U _c * -> -> -> 0 `i `ui `ux -> -> # *U &U _c `ui `ux ( _EUSART_Read ..  ]
-"137
+"146
 }
-[; ;main.c: 137: } while (c[0] == '\0');
+[; ;main.c: 146: } while (c[0] == '\0');
 [e $ == -> *U + &U _c * -> -> -> 0 `i `ui `ux -> -> # *U &U _c `ui `ux `ui -> 0 `ui 559  ]
 [e :U 558 ]
-"139
+"148
 [v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 139: int i = 0;
+[; ;main.c: 148: int i = 0;
 [e = _i -> 0 `i ]
-[; ;main.c: 140: do {
-"140
+[; ;main.c: 149: do {
+"149
 [e :U 562 ]
 {
-[; ;main.c: 141: c[++i] = EUSART_Read();
-"141
+[; ;main.c: 150: c[++i] = EUSART_Read();
+"150
 [e = *U + &U _c * -> -> =+ _i -> 1 `i `ui `ux -> -> # *U &U _c `ui `ux ( _EUSART_Read ..  ]
-"142
+"151
 }
-[; ;main.c: 142: } while (c[i] != '\n' && i < 64);
+[; ;main.c: 151: } while (c[i] != '\n' && i < 64);
 [e $ && != -> *U + &U _c * -> -> _i `ui `ux -> -> # *U &U _c `ui `ux `ui -> 10 `ui < _i -> 64 `i 562  ]
 [e :U 561 ]
-[; ;main.c: 144: if (c[i] == '\n') c[i] = '\0';
-"144
+[; ;main.c: 153: if (c[i] == '\n') c[i] = '\0';
+"153
 [e $ ! == -> *U + &U _c * -> -> _i `ui `ux -> -> # *U &U _c `ui `ux `ui -> 10 `ui 563  ]
 [e = *U + &U _c * -> -> _i `ui `ux -> -> # *U &U _c `ui `ux -> -> 0 `ui `uc ]
 [e :U 563 ]
-[; ;main.c: 145: if (c[i-1] == '\r') c[i-1] = '\0';
-"145
+[; ;main.c: 154: if (c[i-1] == '\r') c[i-1] = '\0';
+"154
 [e $ ! == -> *U + &U _c * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _c `ui `ux `ui -> 13 `ui 564  ]
 [e = *U + &U _c * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _c `ui `ux -> -> 0 `ui `uc ]
 [e :U 564 ]
-[; ;main.c: 146: return c;
-"146
+[; ;main.c: 155: return c;
+"155
 [e ) &U _c ]
 [e $UE 556  ]
-[; ;main.c: 147: }
-"147
+[; ;main.c: 156: }
+"156
 [e :UE 556 ]
 }
-"153
+"162
 [v _write_line `(i ~T0 @X0 1 ef1`*uc ]
 {
-[; ;main.c: 153: int write_line(char * line) {
+[; ;main.c: 162: int write_line(char * line) {
 [e :U _write_line ]
 [v _line `*uc ~T0 @X0 1 r1 ]
 [f ]
-"154
+"163
 [v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 154: int i = 0;
+[; ;main.c: 163: int i = 0;
 [e = _i -> 0 `i ]
-[; ;main.c: 155: while(line[i] != '\0') {
-"155
+[; ;main.c: 164: while(line[i] != '\0') {
+"164
 [e $U 566  ]
 [e :U 567 ]
 {
-[; ;main.c: 156: EUSART_Write(line[i++]);
-"156
+[; ;main.c: 165: EUSART_Write(line[i++]);
+"165
 [e ( _EUSART_Write (1 *U + _line * -> ++ _i -> 1 `i `x -> -> # *U _line `i `x ]
-"157
+"166
 }
 [e :U 566 ]
-"155
+"164
 [e $ != -> *U + _line * -> _i `x -> -> # *U _line `i `x `ui -> 0 `ui 567  ]
 [e :U 568 ]
-[; ;main.c: 157: }
-[; ;main.c: 158: EUSART_Write('\r');
-"158
+[; ;main.c: 166: }
+[; ;main.c: 167: EUSART_Write('\r');
+"167
 [e ( _EUSART_Write (1 -> -> 13 `ui `uc ]
-[; ;main.c: 159: EUSART_Write('\n');
-"159
+[; ;main.c: 168: EUSART_Write('\n');
+"168
 [e ( _EUSART_Write (1 -> -> 10 `ui `uc ]
-[; ;main.c: 160: return (0);
-"160
+[; ;main.c: 169: return (0);
+"169
 [e ) -> 0 `i ]
 [e $UE 565  ]
-[; ;main.c: 161: }
-"161
+[; ;main.c: 170: }
+"170
 [e :UE 565 ]
 }
-"167
+"176
 [v _write_and_wait `(i ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;main.c: 167: int write_and_wait(char * cmd, char * res) {
+[; ;main.c: 176: int write_and_wait(char * cmd, char * res) {
 [e :U _write_and_wait ]
 [v _cmd `*uc ~T0 @X0 1 r1 ]
 [v _res `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;main.c: 168: write_line(cmd);
-"168
+[; ;main.c: 177: write_line(cmd);
+"177
 [e ( _write_line (1 _cmd ]
-"169
+"178
 [v _line `*uc ~T0 @X0 1 a ]
-[; ;main.c: 169: char * line = read_line();
+[; ;main.c: 178: char * line = read_line();
 [e = _line ( _read_line ..  ]
-[; ;main.c: 170: return strcmp(line, res);
-"170
+[; ;main.c: 179: return strcmp(line, res);
+"179
 [e ) ( _strcmp (2 , -> _line `*Cuc -> _res `*Cuc ]
 [e $UE 569  ]
-[; ;main.c: 171: }
-"171
+[; ;main.c: 180: }
+"180
 [e :UE 569 ]
 }
-"175
+"184
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 175: void main(void) {
+[; ;main.c: 184: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 178: SYSTEM_Initialize();
-"178
+[; ;main.c: 187: SYSTEM_Initialize();
+"187
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 179: (INTCONbits.GIE = 1);
-"179
+[; ;main.c: 188: (INTCONbits.GIE = 1);
+"188
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 180: (INTCONbits.PEIE = 1);
-"180
+[; ;main.c: 189: (INTCONbits.PEIE = 1);
+"189
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 182: do { LATAbits.LATA4 = 1; } while(0);
-"182
+[; ;main.c: 191: do { LATAbits.LATA4 = 1; } while(0);
+"191
 [e :U 573 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 572 ]
-"184
+"193
 [v _err `i ~T0 @X0 1 a ]
-[; ;main.c: 184: int err = 0;
+[; ;main.c: 193: int err = 0;
 [e = _err -> 0 `i ]
-[; ;main.c: 187: err = strcmp(read_line(), "CMD");
-"187
+[; ;main.c: 196: err = strcmp(read_line(), "CMD");
+"196
 [e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 1C ]
-[; ;main.c: 188: if (err) blink_leds(1, 1);
-"188
+[; ;main.c: 197: if (err) blink_leds(1, 1);
+"197
 [e $ ! != _err -> 0 `i 574  ]
 [e ( _blink_leds (2 , -> 1 `i -> 1 `i ]
 [e :U 574 ]
-[; ;main.c: 191: err = write_and_wait("SF,1", "AOK");
-"191
+[; ;main.c: 200: err = write_and_wait("SF,1", "AOK");
+"200
 [e = _err ( _write_and_wait (2 , -> :s 2C `*uc -> :s 3C `*uc ]
-[; ;main.c: 192: if (err) blink_leds(1, 2);
-"192
+[; ;main.c: 201: if (err) blink_leds(1, 2);
+"201
 [e $ ! != _err -> 0 `i 575  ]
 [e ( _blink_leds (2 , -> 1 `i -> 2 `i ]
 [e :U 575 ]
-[; ;main.c: 196: err = write_and_wait("SS,C0000001", "AOK");
-"196
+[; ;main.c: 205: err = write_and_wait("SS,C0000001", "AOK");
+"205
 [e = _err ( _write_and_wait (2 , -> :s 4C `*uc -> :s 5C `*uc ]
-[; ;main.c: 197: if (err) blink_leds(1, 4);
-"197
+[; ;main.c: 206: if (err) blink_leds(1, 4);
+"206
 [e $ ! != _err -> 0 `i 576  ]
 [e ( _blink_leds (2 , -> 1 `i -> 4 `i ]
 [e :U 576 ]
-[; ;main.c: 200: err = write_and_wait("SR,00000000", "AOK");
-"200
+[; ;main.c: 209: err = write_and_wait("SR,00000000", "AOK");
+"209
 [e = _err ( _write_and_wait (2 , -> :s 6C `*uc -> :s 7C `*uc ]
-[; ;main.c: 201: if (err) blink_leds(2, 1);
-"201
+[; ;main.c: 210: if (err) blink_leds(2, 1);
+"210
 [e $ ! != _err -> 0 `i 577  ]
 [e ( _blink_leds (2 , -> 2 `i -> 1 `i ]
 [e :U 577 ]
-[; ;main.c: 204: err = write_and_wait("SN,PIC16BLE", "AOK");
-"204
+[; ;main.c: 213: err = write_and_wait("SN,PIC16BLE", "AOK");
+"213
 [e = _err ( _write_and_wait (2 , -> :s 8C `*uc -> :s 9C `*uc ]
-[; ;main.c: 205: if (err) blink_leds(2, 2);
-"205
+[; ;main.c: 214: if (err) blink_leds(2, 2);
+"214
 [e $ ! != _err -> 0 `i 578  ]
 [e ( _blink_leds (2 , -> 2 `i -> 2 `i ]
 [e :U 578 ]
-[; ;main.c: 208: err = write_and_wait("PZ", "AOK");
-"208
+[; ;main.c: 217: err = write_and_wait("PZ", "AOK");
+"217
 [e = _err ( _write_and_wait (2 , -> :s 10C `*uc -> :s 11C `*uc ]
-[; ;main.c: 209: if (err) blink_leds(2, 6);
-"209
+[; ;main.c: 218: if (err) blink_leds(2, 6);
+"218
 [e $ ! != _err -> 0 `i 579  ]
 [e ( _blink_leds (2 , -> 2 `i -> 6 `i ]
 [e :U 579 ]
-[; ;main.c: 212: err = write_and_wait("PS,622DF40185ED4666A4FE9EFAA3AB47AA", "AOK");
-"212
+[; ;main.c: 221: err = write_and_wait("PS,622DF40185ED4666A4FE9EFAA3AB47AA", "AOK");
+"221
 [e = _err ( _write_and_wait (2 , -> :s 12C `*uc -> :s 13C `*uc ]
-[; ;main.c: 213: if (err) blink_leds(2, 7);
-"213
+[; ;main.c: 222: if (err) blink_leds(2, 7);
+"222
 [e $ ! != _err -> 0 `i 580  ]
 [e ( _blink_leds (2 , -> 2 `i -> 7 `i ]
 [e :U 580 ]
-[; ;main.c: 216: err = write_and_wait("PC,7817A8EBF6CB4BE3814352086719754D,12,02", "AOK");
-"216
+[; ;main.c: 225: err = write_and_wait("PC,7817A8EBF6CB4BE3814352086719754D,12,02", "AOK");
+"225
 [e = _err ( _write_and_wait (2 , -> :s 14C `*uc -> :s 15C `*uc ]
-[; ;main.c: 217: if (err) blink_leds(2, 8);
-"217
+[; ;main.c: 226: if (err) blink_leds(2, 8);
+"226
 [e $ ! != _err -> 0 `i 581  ]
 [e ( _blink_leds (2 , -> 2 `i -> 8 `i ]
 [e :U 581 ]
-[; ;main.c: 220: err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,14", "AOK");
-"220
+[; ;main.c: 229: err = write_and_wait("PC,C093685D005F4D3C82406D3020A2C608,1A,14", "AOK");
+"229
 [e = _err ( _write_and_wait (2 , -> :s 16C `*uc -> :s 17C `*uc ]
-[; ;main.c: 221: if (err) blink_leds(2, 9);
-"221
+[; ;main.c: 230: if (err) blink_leds(2, 9);
+"230
 [e $ ! != _err -> 0 `i 582  ]
 [e ( _blink_leds (2 , -> 2 `i -> 9 `i ]
 [e :U 582 ]
-[; ;main.c: 224: err = write_and_wait("R,1", "Reboot");
-"224
+[; ;main.c: 233: err = write_and_wait("R,1", "Reboot");
+"233
 [e = _err ( _write_and_wait (2 , -> :s 18C `*uc -> :s 19C `*uc ]
-[; ;main.c: 225: if (err) blink_leds(2, 3);
-"225
+[; ;main.c: 234: if (err) blink_leds(2, 3);
+"234
 [e $ ! != _err -> 0 `i 583  ]
 [e ( _blink_leds (2 , -> 2 `i -> 3 `i ]
 [e :U 583 ]
-[; ;main.c: 228: err = strcmp(read_line(), "CMD");
-"228
+[; ;main.c: 237: err = strcmp(read_line(), "CMD");
+"237
 [e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 20C ]
-[; ;main.c: 229: if (err) blink_leds(2, 4);
-"229
+[; ;main.c: 238: if (err) blink_leds(2, 4);
+"238
 [e $ ! != _err -> 0 `i 584  ]
 [e ( _blink_leds (2 , -> 2 `i -> 4 `i ]
 [e :U 584 ]
-[; ;main.c: 232: err = write_and_wait("SUW,2A19,32", "AOK");
-"232
+[; ;main.c: 241: err = write_and_wait("SUW,2A19,32", "AOK");
+"241
 [e = _err ( _write_and_wait (2 , -> :s 21C `*uc -> :s 22C `*uc ]
-[; ;main.c: 233: if (err) blink_leds(2, 5);
-"233
+[; ;main.c: 242: if (err) blink_leds(2, 5);
+"242
 [e $ ! != _err -> 0 `i 585  ]
 [e ( _blink_leds (2 , -> 2 `i -> 5 `i ]
 [e :U 585 ]
-[; ;main.c: 236: err = write_and_wait("SUW,7817A8EBF6CB4BE3814352086719754D,AABBCCDDEE", "AOK");
-"236
+[; ;main.c: 245: err = write_and_wait("SUW,7817A8EBF6CB4BE3814352086719754D,AABBCCDDEE", "AOK");
+"245
 [e = _err ( _write_and_wait (2 , -> :s 23C `*uc -> :s 24C `*uc ]
-[; ;main.c: 237: if (err) blink_leds(2, 10);
-"237
+[; ;main.c: 246: if (err) blink_leds(2, 10);
+"246
 [e $ ! != _err -> 0 `i 586  ]
 [e ( _blink_leds (2 , -> 2 `i -> 10 `i ]
 [e :U 586 ]
-"253
+"249
 [v _c `i ~T0 @X0 1 a ]
-[; ;main.c: 253: int c = 0;
+[; ;main.c: 249: int c = 0;
 [e = _c -> 0 `i ]
-[; ;main.c: 254: while(1) {
-"254
+[; ;main.c: 250: while(1) {
+"250
 [e :U 588 ]
 {
-[; ;main.c: 256: if (c%5==0) {
-"256
+[; ;main.c: 252: if (c%5==0) {
+"252
 [e $ ! == % _c -> 5 `i -> 0 `i 590  ]
 {
-[; ;main.c: 258: err = write_line("A,0050,07D0");
-"258
+[; ;main.c: 254: err = write_line("A,0050,07D0");
+"254
 [e = _err ( _write_line (1 -> :s 25C `*uc ]
-[; ;main.c: 259: if (err) blink_leds(2, 14);
-"259
+[; ;main.c: 255: if (err) blink_leds(2, 14);
+"255
 [e $ ! != _err -> 0 `i 591  ]
 [e ( _blink_leds (2 , -> 2 `i -> 14 `i ]
 [e :U 591 ]
-"260
+"256
 }
 [e :U 590 ]
-[; ;main.c: 260: }
-[; ;main.c: 261: c++;
-"261
+[; ;main.c: 256: }
+[; ;main.c: 257: c++;
+"257
 [e ++ _c -> 1 `i ]
-[; ;main.c: 262: if(c>100) {
-"262
+[; ;main.c: 258: if(c>100) {
+"258
 [e $ ! > _c -> 100 `i 592  ]
 {
-[; ;main.c: 263: c=0;
-"263
+[; ;main.c: 259: c=0;
+"259
 [e = _c -> 0 `i ]
-"264
+"260
 }
 [e :U 592 ]
-[; ;main.c: 264: }
-[; ;main.c: 266: _delay((unsigned long)((1000)*(8000000/4000.0)));
-"266
+[; ;main.c: 260: }
+[; ;main.c: 262: _delay((unsigned long)((1000)*(8000000/4000.0)));
+"262
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 269: adcResult = ADC_GetConversion(0x4);
-"269
+[; ;main.c: 264: adcResult = ADC_GetConversion(0x4);
+"264
 [e = _adcResult ( _ADC_GetConversion (1 -> -> 4 `i `E4389 ]
-"270
+"265
 [v _result `uc ~T0 @X0 -> 4 `i a ]
 [v F4456 `uc ~T0 @X0 -> 64 `i s ]
 [i F4456
@@ -4827,47 +4827,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"271
+"266
 [v _command `uc ~T0 @X0 -> 64 `i a ]
-[; ;main.c: 270: char result[4];
-[; ;main.c: 271: char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
+[; ;main.c: 265: char result[4];
+[; ;main.c: 266: char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
 [e = _command F4456 ]
-[; ;main.c: 272: err=write_line(strcat(command,result));
-"272
+[; ;main.c: 267: err=write_line(strcat(command,result));
+"267
 [e = _err ( _write_line (1 ( _strcat (2 , &U _command -> &U _result `*Cuc ]
-[; ;main.c: 277: sprintf(result, "%X", adcResult);
-"277
+[; ;main.c: 269: sprintf(result, "%X", adcResult);
+"269
 [e ( _sprintf (1 , (. , &U _result :s 26C _adcResult ]
-"281
+"271
 }
 [e :U 587 ]
-"254
+"250
 [e $U 588  ]
 [e :U 589 ]
-[; ;main.c: 281: }
-[; ;main.c: 284: do { LATAbits.LATA4 = 0; } while(0);
-"284
+[; ;main.c: 271: }
+[; ;main.c: 274: do { LATAbits.LATA4 = 0; } while(0);
+"274
 [e :U 595 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 594 ]
-[; ;main.c: 287: err = strcmp(read_line(), "END");
-"287
+[; ;main.c: 277: err = strcmp(read_line(), "END");
+"277
 [e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 27C ]
-[; ;main.c: 288: if (err) blink_leds(3,9);
-"288
+[; ;main.c: 278: if (err) blink_leds(3,9);
+"278
 [e $ ! != _err -> 0 `i 596  ]
 [e ( _blink_leds (2 , -> 3 `i -> 9 `i ]
 [e :U 596 ]
-[; ;main.c: 291: while(1);
-"291
+[; ;main.c: 281: while(1);
+"281
 [e :U 598 ]
 [e :U 597 ]
 [e $U 598  ]
 [e :U 599 ]
-[; ;main.c: 292: }
-"292
+[; ;main.c: 282: }
+"282
 [e :UE 570 ]
 }
 [p f _sprintf 10485760 ]
