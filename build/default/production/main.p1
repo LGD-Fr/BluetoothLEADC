@@ -52,10 +52,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E4389 . channel_Temp channel_DAC channel_FVR  ]
 "286 mcc_generated_files/adc.h
 [v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E4389 ]
-"34 C:\Program Files (x86)\Microchip\xc8\v1.41\include\string.h
-[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"34 C:\Program Files (x86)\Microchip\xc8\v1.41\include\string.h
+[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -4784,6 +4784,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _adcResult ( _ADC_GetConversion (1 -> -> 4 `i `E4389 ]
 "265
 [v _result `uc ~T0 @X0 -> 4 `i a ]
+[; ;main.c: 265: char result[4];
+[; ;main.c: 266: sprintf(result, "%X", adcResult);
+"266
+[e ( _sprintf (1 , (. , &U _result :s 26C _adcResult ]
 [v F4456 `uc ~T0 @X0 -> 64 `i s ]
 [i F4456
 :U ..
@@ -4827,47 +4831,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"266
-[v _command `uc ~T0 @X0 -> 64 `i a ]
-[; ;main.c: 265: char result[4];
-[; ;main.c: 266: char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
-[e = _command F4456 ]
-[; ;main.c: 267: err=write_line(strcat(command,result));
 "267
+[v _command `uc ~T0 @X0 -> 64 `i a ]
+[; ;main.c: 267: char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
+[e = _command F4456 ]
+[; ;main.c: 268: err=write_line(strcat(command,result));
+"268
 [e = _err ( _write_line (1 ( _strcat (2 , &U _command -> &U _result `*Cuc ]
-[; ;main.c: 269: sprintf(result, "%X", adcResult);
-"269
-[e ( _sprintf (1 , (. , &U _result :s 26C _adcResult ]
-"271
+"272
 }
 [e :U 587 ]
 "250
 [e $U 588  ]
 [e :U 589 ]
-[; ;main.c: 271: }
-[; ;main.c: 274: do { LATAbits.LATA4 = 0; } while(0);
-"274
+[; ;main.c: 272: }
+[; ;main.c: 275: do { LATAbits.LATA4 = 0; } while(0);
+"275
 [e :U 595 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 594 ]
-[; ;main.c: 277: err = strcmp(read_line(), "END");
-"277
-[e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 27C ]
-[; ;main.c: 278: if (err) blink_leds(3,9);
+[; ;main.c: 278: err = strcmp(read_line(), "END");
 "278
+[e = _err ( _strcmp (2 , -> ( _read_line ..  `*Cuc :s 27C ]
+[; ;main.c: 279: if (err) blink_leds(3,9);
+"279
 [e $ ! != _err -> 0 `i 596  ]
 [e ( _blink_leds (2 , -> 3 `i -> 9 `i ]
 [e :U 596 ]
-[; ;main.c: 281: while(1);
-"281
+[; ;main.c: 282: while(1);
+"282
 [e :U 598 ]
 [e :U 597 ]
 [e $U 598  ]
 [e :U 599 ]
-[; ;main.c: 282: }
-"282
+[; ;main.c: 283: }
+"283
 [e :UE 570 ]
 }
 [p f _sprintf 10485760 ]

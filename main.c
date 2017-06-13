@@ -263,10 +263,9 @@ void main(void) {
         
         adcResult = ADC_GetConversion(0x4);
         char result[4];
+        sprintf(result, "%X", adcResult);
         char command[64]="SUW,7817A8EBF6CB4BE3814352086719754D,";
         err=write_line(strcat(command,result));
-        
-        sprintf(result, "%X", adcResult);
     
     }
     
